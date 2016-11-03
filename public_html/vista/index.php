@@ -17,6 +17,12 @@
             include './barraBusqueda.html';
             include './estatico/cpro.html';
             include './footer.html';
+        }else if($_REQUEST['menu']=="construccion"){
+            include './header.html';
+            include './aside.html';
+            include './barraBusqueda.html';
+            include './construccion.html';
+            include './footer.html';
         }
     }else if(isset($_REQUEST['proyecto'])){//cuando se selecciona un equipo
             if($_REQUEST['proyecto']=="1"){
