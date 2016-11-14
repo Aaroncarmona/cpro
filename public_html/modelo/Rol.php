@@ -3,7 +3,7 @@ class Rol{
     private $id_rl;
     private $des_rl;
 
-    public function iniciar($id_rl, $des_rl){
+    public function inicializar($id_rl, $des_rl){
         $this->id_rl=$id_rl;
         $this->des_rl=$des_rl;
     }

@@ -1,24 +1,42 @@
+<?php
+    $tam = count($datos);
+    $i = 0;
+    $j = -1;
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-9">
             <img src="recursos/img/estatico/galeria1.jpg" style="width: 100%" class="img-responsive img-rounded">
         </div>
         
+        <?php 
+            while($i!==$tam){
+                if($j!==$datos[$i]->getId_ep()){
+                    $j=$datos[$i]->getId_ep();
+        ?>
         <div class="col-md-9">
             <h1 class="text-center">
-                <strong>Exproy UTN 2016</strong>
+                <strong><?php echo $cGaleria->mostrarEx($j); ?></strong>
             </h1>
         </div>
-        
+        <?php 
+            }
+        ?>
         <div class="col-md-3">
-            <a>
-                <img src="recursos/img/estatico/galeria/2016_1.jpg" class="img-responsive">
-            </a> 
-            <h3>Bienvenidos</h3> 
-            <p>Equipo ?? gracias por asistir a este evento</p>
+                <a href="#" id=" <?php echo $datos[$i]->getId_gl()?>">
+                <?php echo $datos[$i]->getFoto_gl();?>
+                </a>
+            <h3>
+                <?php echo $datos[$i]->getTitulo_gl();?>
+            </h3> 
+            <p><?php echo $datos[$i]->getDes_gl();?></p>
         </div>
         
-        <div class="col-md-3">
+        <?php 
+            $i++;
+            }
+        ?>
+        <!--div class="col-md-3">
             <a>
                 <img src="recursos/img/estatico/galeria/2016_2.jpg" class="img-responsive">
             </a> 
@@ -92,7 +110,7 @@
             </a> 
             <h3>Finaliza</h3> 
             <p>Muchos proyectos presentados hoy</p>
-        </div>
+        </div-->
         
     </div>
     

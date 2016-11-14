@@ -8,7 +8,7 @@ class Integrante{
       private $apellido_in;
       private $correo_in;
 
-      public function incializar($id_in,$id_rl,$id_eq,$foto_in,$nombre_in,$apellido_in,$correo_in){
+      public function inicializar($id_in,$id_rl,$id_eq,$foto_in,$nombre_in,$apellido_in,$correo_in){
               $this->id_in = $id_in;
               $this->id_rl = $id_rl;
               $this->id_eq = $id_eq;

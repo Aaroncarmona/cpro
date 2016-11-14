@@ -3,7 +3,7 @@ class Tematica{
     private $id_tm;
     private $des_tm;
      
-    public function incializar($id_tm,$des_tm){
+    public function inicializar($id_tm,$des_tm){
         $this->id_tm=$id_tm;
         $this->des_tm=$des_tm;
     }
