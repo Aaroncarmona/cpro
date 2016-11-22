@@ -72,12 +72,12 @@ if($con->comprobar()){
             $dtTematica = $cEquipo->obtenerTematica($mProyecto->getId_pr());
             $dtDesarrollo = $cEquipo->obtenerDesarrollo($mProyecto->getId_pr());
             $dtDGrupo = $cEquipo->obtenerDetalleGrupo($mProyecto->getId_pr());
-            $dtIntegrante = $cEquipo->obtenerIntegrante($dtEquipo->getId_eq());
+            if( count($dtEquipo) > 0 ){
+                $dtIntegrante = $cEquipo->obtenerIntegrante($dtEquipo->getId_eq());
+                
+            }
 
             //$dtTematica = $cEquipo->obtenerTematica($mProyecto);
-
-
-
 
             include './secciones/header.html';
             include './secciones/asideProyecto.php';

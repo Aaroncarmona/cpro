@@ -2,13 +2,13 @@
 class Exproy{
     private $id_ep;
     private $id_ao;
-    private $imagen_ep;
+    private $logo_ep;
     private $desc_ep;
 
-    public function inicializar(){
+    public function inicializar($id_ep,$id_ao,$logo_ep,$desc_ep){
         $this->id_ep=$id_ep;
         $this->id_ao=$id_ao;
-        $this->imagen_ep=$imagen_ep;
+        $this->logo_ep=$logo_ep;
         $this->desc_ep=$desc_ep;
     }
 
@@ -20,8 +20,8 @@ class Exproy{
         return $this->id_ao;
     }
 
-    public function getImagen_ep(){
-        return $this->imagen_ep;
+    public function getLogo_ep(){
+        return $this->logo_ep;
     }
 
     public function getDesc_ep(){
@@ -36,8 +36,8 @@ class Exproy{
         $this->id_ao=$id_ao;
     }
 
-    public function setImagen_ep($imagen_ep){
-        $this->imagen_ep=$imagen_ep;
+    public function setLogo_ep($logo_ep){
+        $this->logo_ep=$logo_ep;
     }
 
     public function setDesc_ep($desc_ep){

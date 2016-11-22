@@ -3,7 +3,8 @@ class CtrlBuscar{
 
 	public function mostrarTodo(){
 		$i = 0;
-    	$stmt = "select * from proyecto";
+    	$stmt = 
+    	$stmt = "select * from proyecto where id_pr in (select id_pr from equipo)";
 
 
     	$con = new Conexion();

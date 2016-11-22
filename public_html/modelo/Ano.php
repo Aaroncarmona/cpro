@@ -1,5 +1,5 @@
 <?php 
-class ano{
+class Ano{
     private $id_ao;
     private $ano;
 

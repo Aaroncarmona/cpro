@@ -23,16 +23,16 @@
             }
         ?>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
-                <a href="#" id=" <?php echo $datos[$i]->getId_gl()?>">
-                <?php echo $datos[$i]->getFoto_gl();?>
-                </a>
-            <h3>
+            <?php echo $datos[$i]->getFoto_gl();?>
+            <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#<?php echo $datos[$i]->getId_gl()?>"><span class="glyphicon glyphicon-expand"></span> Ampliar y mostrar detalles</button>
+            <!--h3>
                 <?php echo $datos[$i]->getTitulo_gl();?>
             </h3> 
-            <p><?php echo $datos[$i]->getDes_gl();?></p>
+            <p><?php echo $datos[$i]->getDes_gl();?></p-->
+            <p></p>
         </div>
-        
-        <?php 
+            <?php 
+            include 'util/modal.php';
             $i++;
             }
         ?>
