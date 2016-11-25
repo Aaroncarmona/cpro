@@ -10,6 +10,7 @@
         </div>
         
         <?php 
+            if($tam !== 0){
             while($i!==$tam){
                 if($j!==$datos[$i]->getId_ep()){
                     $j=$datos[$i]->getId_ep();
@@ -34,6 +35,12 @@
             <?php 
             include 'util/modal.php';
             $i++;
+            }
+            
+            }else{
+                ?>
+        <div class="col-lg-12">
+            <div class="alert alert-info"><span class="glyphicon glyphicon-exclamation-sign"></span> <strong>Info: </strong>Aun no se agregan fotos</div> </div><?php
             }
         ?>
     </div>

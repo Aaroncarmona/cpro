@@ -13,6 +13,7 @@ class Conexion{
         $this->pass = "";
         $this->bd = "cpro";
         $this->port = "3306";
+        $this->conectar();
     }
     
     public function getHost() {

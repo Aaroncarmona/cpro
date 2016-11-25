@@ -1,9 +1,7 @@
 <?php
 include '../modelo/Conexion.php';
-
 $con = new Conexion();
 $con->conectar();
-
 if($con->comprobar()){
     include './secciones/header.html';
     include './estatico/construccion.html';
@@ -12,20 +10,18 @@ if($con->comprobar()){
 }else{
   
     if (isset($_REQUEST['menu'])){//cuando le da click al aside
-        if($_REQUEST['menu']=="exproy"){
+        /**if($_REQUEST['menu']=="exproy"){
             include './secciones/header.html';
             include './secciones/aside.html';
-            include './secciones/barraBusqueda.html';
+            include './secciones/barraBusqueda.php';
             include './estatico/exproy.html';
             include './secciones/footer.html';
         }else if($_REQUEST['menu']=="galeria"){//Galeria
-
             include '../control/CtrlGaleria.php';
             include '../modelo/Galeria.php';
             
             $cGaleria = new CtrlGaleria();
             $mGaleria = new Galeria();
-
             $datos = $cGaleria->mostrarTodo();
             
             include './secciones/header.html';
@@ -38,18 +34,17 @@ if($con->comprobar()){
         }else if($_REQUEST['menu']=="cpro"){
             include './secciones/header.html';
             include './secciones/aside.html';
-            include './secciones/barraBusqueda.html';
+            include './secciones/barraBusqueda.php';
             include './estatico/cpro.html';
             include './secciones/footer.html';
         }else if($_REQUEST['menu']=="construccion"){
             include './secciones/header.html';
             include './secciones/aside.html';
-            include './secciones/barraBusqueda.html';
+            include './secciones/barraBusqueda.php';
             include './estatico/construccion.html';
             include './secciones/footer.html';
         }
     }else if(isset($_REQUEST['proyecto'])){
-
             include '../modelo/Proyecto.php';
             include '../modelo/Equipo.php';
             include '../modelo/Exproy.php';
@@ -58,48 +53,29 @@ if($con->comprobar()){
             include '../modelo/Rol.php';
             
             include '../control/CtrlEquipo.php';/*seria como el ver mas, no se definio bien el nombre*/
-
             /*MODELOS*/
-            $mProyecto = new Proyecto();
+            //$mProyecto = new Proyecto();
             /*CONTROL*/
-            $cEquipo = new CtrlEquipo();
-
+            /*$cEquipo = new CtrlEquipo();
             $mProyecto->setId_pr($_REQUEST['proyecto']);
             
             /*DATOS*/
-            $dtEquipo = $cEquipo->obtenerEquipo($mProyecto->getId_pr());
+            /*$dtEquipo = $cEquipo->obtenerEquipo($mProyecto->getId_pr());
             $dtProyecto = $cEquipo->obtenerProyecto($mProyecto->getId_pr());
             $dtTematica = $cEquipo->obtenerTematica($mProyecto->getId_pr());
             $dtDesarrollo = $cEquipo->obtenerDesarrollo($mProyecto->getId_pr());
             $dtDGrupo = $cEquipo->obtenerDetalleGrupo($mProyecto->getId_pr());
-            if( count($dtEquipo) > 0 ){
-                $dtIntegrante = $cEquipo->obtenerIntegrante($dtEquipo->getId_eq());
-                
-            }
-
+            $dtIntegrante = $cEquipo->obtenerIntegrante($dtEquipo->getId_eq());
             //$dtTematica = $cEquipo->obtenerTematica($mProyecto);
-
             include './secciones/header.html';
             include './secciones/asideProyecto.php';
             include './contenedor/proyectos.php';
             include './secciones/footer.html';
-        
+        */
     }else{//cuando entra el usuario
-        include '../control/CtrlBuscar.php';
-        include '../modelo/Proyecto.php';
-        include '../modelo/Equipo.php';
-
-        $cBuscar = new CtrlBuscar();
-        $mProyecto = new Proyecto();
-        $mEquipo = new Equipo();
-
-
-        $dato = $cBuscar->mostrarTodo();
-
         include './secciones/header.html';
         include './secciones/aside.html';
-        include './secciones/barraBusqueda.html';
-        include './contenedor/inicio.php';
+        include './secciones/barraBusqueda.php';
         include './secciones/footer.html';
     }
 }

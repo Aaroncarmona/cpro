@@ -6,7 +6,7 @@ class CtrlGaleria{
     	$stmt = "select * from galeria order by(id_ep) desc";
     	
     	$con = new Conexion();
-    	$galeria;
+    	$galeria = null;
 
     	$con->conectar();
     	$query = $con->query($stmt);
