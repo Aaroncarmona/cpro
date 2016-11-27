@@ -4,15 +4,17 @@ class Conexion{
     private $user;
     private $pass;
     private $bd;
-    private $port;
     private $con;
     
     public function __construct(){
-        $this->host = "127.0.0.1";
+        /*$this->host = "127.0.0.1";
         $this->user = "root";
         $this->pass = "";
-        $this->bd = "cpro";
-        $this->port = "3306";
+        $this->bd = "cpro";*/
+        $this->host = "mysql.hostinger.mx";
+        $this->user = "u396335828_admin";
+        $this->pass = "carmona11";
+        $this->bd = "u396335828_cpro";
         $this->conectar();
     }
     
@@ -30,10 +32,6 @@ class Conexion{
 
     public function getBd() {
         return $this->bd;
-    }
-
-    public function getPort() {
-        return $this->port;
     }
 
     public function getCon() {
@@ -54,10 +52,6 @@ class Conexion{
 
     public function setBd($bd) {
         $this->bd = $bd;
-    }
-
-    public function setPort($port) {
-        $this->port = $port;
     }
 
     public function setCon($con) {
