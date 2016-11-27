@@ -8,7 +8,8 @@
       <div class="modal-body">
         <?php echo $datos[$i]->getFoto_gl();?>
         <hr>
-        <strong>Descripcion: </strong><?php echo $datos[$i]->getTitulo_gl();?>
+        <strong>Descripcion: </strong><?php echo $datos[$i]->getTitulo_gl();?><br>
+        <strong>Año de EXPROY: </strong><?php echo $datosAn->getAno(); ?>
 
       </div>
       <div class="modal-footer">

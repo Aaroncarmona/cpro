@@ -3,7 +3,7 @@ class Ano{
     private $id_ao;
     private $ano;
 
-    public function iniciar($id_ao,$ano){
+    public function inicializar($id_ao,$ano){
         $this->id_ao=$id_ao;
         $this->ano=$ano;
     }

@@ -7,10 +7,9 @@
                 <a href="index.php"><button class="btn btn-block btn-success"> <span class="glyphicon glyphicon-arrow-left"></span> Regresar</button></a>
                 <br>    
                     <div class="thumbnail">
-                        <?php echo $dtEquipo->getLogo_eq(); ?>
+                        <?php echo $datoEquipo->getLogo_eq(); ?>
                         <div class="caption">
-                            <h3><strong>Equipo:</strong><span class="text-danger"> <br><?php echo $dtEquipo->getNombre_eq(); ?></span></h3>
-                            <p>"<?php echo $dtEquipo->getLema_eq(); ?>"</p>
+                            <h3><strong>Equipo:</strong><span class="text-danger"> <br><?php echo $datoEquipo->getNombre_eq(); ?></span></h3>
                             <!--EXPROY UTN 2016-->
                         </div>
                     </div>

@@ -1,93 +1,46 @@
 <?php
-class CtrlBuscar{
-
-	public function mostrarTodo(){
-		$i = 0;
-    	$stmt = 
-    	$stmt = "select * from proyecto where id_pr in (select id_pr from equipo)";
-
-
-    	$con = new Conexion();
-    	$con->conectar();
-    	$query = $con->query($stmt);
-
-    	$proyecto;
-
-    	while ($row = mysqli_fetch_array($query)) {
-    		$encode = base64_encode($row[4]);
-    		
-    		$proyecto[$i] = new Proyecto();
-    		$proyecto[$i]->inicializar(
-				$row[0],
-				$row[1],
-				$row[2],
-				$row[3],
-    			'<img class="img-responsive" src="data:image/jpg;base64,' . $encode . ' " />',
-				$row[5],
-				$row[6],
-				$row[7],
-				$row[8],
-				$row[9]
-    		);
-    		$i++; 
-
-    	}
-    	return $proyecto;
-	}
-
-	public function obtenerEquipos(){
-		$i = 0;
-    	$stmt = "select * from equipo";
+	include '../modelo/info/InfoProyecto.php'; //nivel 0
+	
+	include '../modelo/info/InfoTematica.php';//nivel 1
+	include '../modelo/info/InfoEquipo.php';
+	include '../modelo/info/InfoD_desarrollo.php';
+	include '../modelo/info/InfoD_Cu_Gr.php';
 
 
-    	$con = new Conexion();
-    	$con->conectar();
+	include '../modelo/info/InfoExproy.php';//nivel 2	
+	include '../modelo/info/InfoCuatrimestre.php';
+	include '../modelo/info/InfoGrupo.php';
+	include '../modelo/info/InfoTurno.php';
 
-    	$query = $con->query($stmt);
+	include '../modelo/info/InfoAsesor.php';//nivel 3
+	include '../modelo/info/InfoIntegrante.php';
+	include '../modelo/info/InfoTipo_desarrollo.php';
+	include '../modelo/info/InfoLenguaje.php';
+	include '../modelo/info/InfoAnalisis.php';
+	include '../modelo/info/InfoBd.php';
 
-    	$equipo;
+	include '../modelo/info/InfoRol.php';//nivel 4
 
-    	while ($row = mysqli_fetch_array($query)) {
-    		$encode = base64_encode($row[4]);
-    		
-    		$equipo[$i] = new Equipo();
-    		$equipo[$i]->inicializar(
-				$row[0],
-				$row[1],
-				$row[2],
-				$row[3],
-    			'<img class="img-responsive" src="data:image/jpg;base64,' . $encode . ' " />',
-				$row[5]
-    		);
-    		$i++; 
+	//creacion de objetos y despues se manda a llamar las partes de la pagina
+	$proyecto = new InfoProyecto();
+	$equipo = new InfoEquipo();
+	$d_desarrollo = new InfoD_desarrollo();
+	
+	$analisis = new InfoAnalisis();
+	$bd = new InfoBd();
+	$tipo_desarrollo = new InfoTipo_desarrollo();
+	$lenguaje = new InfoLenguaje();
 
-    	}
-    	return $equipo;
-	}
 
-	public function obtenerEquipo($id){
-	    	$con = new Conexion();
+	$datosProyecto = $proyecto->getAll();
 
-	    	$con->conectar();
-	    	
-	    	$stmt = "select * from equipo where id_pr = " .$id;
-	    	
-	    	$query = $con->query($stmt);
 
-	    	$row = mysqli_fetch_array($query);
-    		
-    		$encode = base64_encode($row[4]);
-	    		
-    		$equipo = new Equipo();
-    		$equipo->inicializar(
-				$row[0],
-				$row[1],
-				$row[2],
-				$row[3],
-    			'<img class="img-responsive" src="data:image/jpg;base64,' . $encode . ' " />',
-				$row[5]
-    		);
-	    	return $equipo;
-		}
-	}
+	include './secciones/header.html';
+	include './secciones/aside.html';
+	include './secciones/barraBusqueda.php';
+	include './contenedor/proyectos.php';
+
+
+
+	include './secciones/footer.html';
 ?>
