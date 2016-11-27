@@ -60,7 +60,7 @@ class Conexion{
     
     public function conectar(){
         $this->con = new mysqli($this->host,$this->user,$this->pass,$this->bd);
-        mysqli_set_charset( $this->con, 'utf8');
+        //mysqli_set_charset( $this->con, 'utf8');
     }
     
     public function comprobar(){
